@@ -1,7 +1,7 @@
 import json
 import os
 
-from tensor_test_task.db import batch_insert_hierarchy_items
+from tensor_test_task.db import batch_insert_hierarchy_items, get_employee_names_by_organization
 
 
 def import_data_from_json_file(path: str, max_size: int = 10 * 1024 * 1024):
@@ -49,4 +49,9 @@ def get_organization_employees(employee_id: int) -> list[str]:
     Args:
         employee_id (int): id сотрудника
     """
-    ...
+    employees = get_employee_names_by_organization(employee_id)
+
+    if not employees:  # кейс когда указали не айди сотрудника
+        raise ValueError
+
+    return employees
