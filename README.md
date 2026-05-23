@@ -5,6 +5,7 @@
 - python-dotenv для работы .env файлами
 
 ### Переменные окружения:
+Для тестового запуска в репо лежит уже заполненый .env файл
 
 - DB_URL
 - DEFAULT_DATA_PATH - путь к файлу для импорта (по умолчанию в проекте размещен в ./db/seeds/input_data.json)
@@ -19,8 +20,11 @@
 - etrypoint в main.py - запускать любым удобным способом
 
 Пример с uv:
+
 `uv run python -m tensor_test_task.main --help` - справка по CLI
+
 `uv run python -m tensor_test_task.main import-data` - импортировать данные
+
 `uv run python -m tensor_test_task.main get-employees 3` - получить сотрудников из офиса сотрудника с ID 3
 
 ### Основные команды:
